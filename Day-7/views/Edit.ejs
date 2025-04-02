@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/updateTask" method="post">
+        <input type="text" hidden value="<%=singleData.id%>" name="id" id="">
+        <input type="text" placeholder="Task Title" value="<%=singleData.Title%>" name="Title" id=""><br><br>
+        <select id="" name="Priority">
+            <option disabled>Select Priority</option>
+            <option value="High" <%=(singleData.Priority == "High") ? "selected" : ""%>>High</option>
+            <option value="Medium" <%=(singleData.Priority == "Medium") ? "selected" : ""%>>Medium</option>
+            <option value="Low" <%=(singleData.Priority == "Low") ? "selected" : ""%>>Low</option>
+        </select><br><br>
+        <select id="" name="Status">
+            <option disabled>Select State</option>
+            <option value="Pending" <%=(singleData.Status == "Pending") ? "selected" : ""%>>Pending</option>
+            <option value="Fulfilled" <%=(singleData.Status == "Fulfilled") ? "selected" : ""%>>Fulfilled</option>
+        </select><br><br>
+        <button>Update</button><br>
+    </form>
+</body>
+</html>
