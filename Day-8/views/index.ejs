@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Task Manager</h1>
+
+    <form action="/addData" method="post">
+        <input type="text" placeholder="Task Title" name="Title" id=""><br><br>
+        <select id="" name="Priority">
+            <option value="" disabled selected>Select Priority</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select><br><br>
+        <select id="" name="Status">
+            <option value="" disabled selected>Select State</option>
+            <option value="Pending">Pending</option>
+            <option value="Fulfilled">Fulfilled</option>
+        </select><br><br>
+        <button>Submit</button>
+    </form><br><br>
+
+    <table border="1" width="40%" align="center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Task Title</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+
+        <%task.map((e,i)=>{%>
+            <tbody>
+                <tr style="text-align: center">
+                    <td><%=e.id%></td>
+                    <td><%=e.Title%></td>
+                    <td><%=e.Priority%></td>
+                    <td><%=e.Status%></td>
+                    <td><a href="/editTask/<%=e.id%>"><button>Edit</button></a></td>
+                    <td><a href="/delTask?id=<%=e.id%>"><button>Delete</button></a></td>
+                </tr>
+            </tbody>
+            <%})%>
+    </table>
+</body>
+</html>
