@@ -5,7 +5,6 @@ const port = 1212;
 const db = require("./Config/db");
 
 const schema = require("./model/fschema");
-const { log } = require("console");
 
 const app = express();
 app.set("view engine","ejs");
