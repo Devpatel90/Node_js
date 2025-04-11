@@ -1,19 +1,27 @@
 const mongoose = require("mongoose");
 
 const schema = mongoose.Schema({
-    name : {
+    img : {
         type : String,
         required : true
     },
-    sub : {
+    title : {
         type : String,
         required : true
     },
-    city : {
+    author : {
+        type : String,
+        required : true
+    },
+    price : {
+        type : Number,
+        required : true
+    },
+    des : {
         type : String,
         required : true
     }
 })
 
-const fschema = mongoose.model("student",schema);
+const fschema = mongoose.model("book",schema);
 module.exports = fschema;
