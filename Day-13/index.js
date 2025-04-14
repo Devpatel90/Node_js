@@ -3,8 +3,9 @@ const path = require('path');
 const port = 1111;
 const app = express();
 
-const db = require("../Day-12-Pro/config/db");
-const schema = require("../Day-12-Pro/model/fschema");
+const db = require("./config/db");
+const schema = require("./model/fschema");
+const multer = require("./middleware/multer");
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, "public")));
@@ -20,7 +21,8 @@ app.get("/addBook", (req, res) => {
     res.render("addbook");
 });
 
-app.post("/setbook",async(req, res) => {
+app.post("/setbook",multer,async(req, res) => {
+    req.body.image = req.file.path;
     await schema.create(req.body).then(() => {
         res.redirect("/");
     }); 
