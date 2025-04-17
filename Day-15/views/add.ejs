@@ -37,12 +37,12 @@
   <div class="form-section">
     <h2 class="form-title">Add a New Book</h2>
     <input type="text" name="id" hidden id="">
-    <form action="/setbook" method="post" enctype="multipart/form-data">
+    <form action="/setbook" method="post">
 
 
       <div class="mb-3">
             <label for="title" class="form-label">Book Image</label>
-            <input type="file" class="form-control" id="image" name="image" placeholder="Enter book image URL">
+            <input type="text" class="form-control" id="image" name="image" placeholder="Enter book image URL">
           </div>
 
 
@@ -64,7 +64,7 @@
 
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" id="description" rows="3" name="des" placeholder="Enter book description"></textarea>
+        <textarea class="form-control" id="description" rows="3" name="description" placeholder="Enter book description"></textarea>
       </div>
 
 

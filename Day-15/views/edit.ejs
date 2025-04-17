@@ -40,12 +40,11 @@
     <div class="container" id="addBook">
         <div class="form-section">
           <h2 class="form-title">Add a New Book</h2>
-          <form action="/updatebook" method="post" enctype="multipart/form-data">
+          <form action="/updatebook" method="post">
             <input type="text" name="id" value="<%=data.id%>" hidden id="">
             <div class="mb-3">
                   <label for="title" class="form-label">Book Image</label>
-                  <input type="file" class="form-control" value="" id="img" name="image" placeholder="Enter book image URL">
-                  <img src="<%=data.image%>" width="10%" alt="">
+                  <input type="text" class="form-control" value="<%=data.image%>" id="img" name="image" placeholder="Enter book image URL">
                 </div>
       
             <div class="mb-3">
