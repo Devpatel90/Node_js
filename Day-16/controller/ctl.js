@@ -12,6 +12,7 @@ module.exports.loginadmin = async (req, res) => {
        return res.redirect("/")
     }
     if (req.body.password = admin.password) {
+        res.cookie("admin", admin);
         res.redirect("/dashboard")
     }
     else{
@@ -19,19 +20,35 @@ module.exports.loginadmin = async (req, res) => {
     }
 }
 
+module.exports.logout = (req, res) => {
+    res.clearCookie("admin"); // admin is key 
+    res.redirect("/")
+}
+
 module.exports.dashboard = (req, res) => {
-    res.render("dashboard");
+    if (req.cookies.admin) {
+        res.render("dashboard");
+        } else {
+            res.redirect("/")
+    }
 }
 
 module.exports.addAdmin = (req, res) => {
-    res.render("addAdmin");
+    if (req.cookies.admin) {
+        res.render("addAdmin");
+    } else {
+        res.redirect("/")
+    }
 }
 
 module.exports.table = async(req, res) => {
-    await fSchema.find({}).then((data) => {
-    res.render("table", { data });
+    if(req.cookies.admin){
+        await fSchema.find({}).then((data) => {
+            res.render("table", { data });
+        
+        })
+    }
 
-    })
 }
 
 module.exports.add = async(req, res) => {
