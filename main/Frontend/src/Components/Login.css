@@ -1,0 +1,19 @@
+    .card {
+      width: 100%;
+      border: none;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      border: 1px solid black;
+      margin-top: 200px;
+      padding: 60px;
+    }
+    .form-control {
+      border-radius: 10px;
+    }
+    .btn-primary {
+      border-radius: 10px;
+    }
+    h2 {
+      font-weight: bold;
+    }
