@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-const port  =  1111;
+const port  =  1112;
 
 const app = express();
 const db = require("./config/db");
